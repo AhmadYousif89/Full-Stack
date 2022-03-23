@@ -16,26 +16,26 @@ jobs:
       - node/install
       - aws-cli/setup
       - checkout
-      - run:
-          name: Install Front-End
-          command: |
-            npm run frontend:install
-      - run:
-          name: Install Back-End
-          command: |
-            npm run backend:install
-      - run:
-          name: Build Back-End
-          command: |
-            npm run backend:build
-      - run:
-          name: Build Front-End
-          command: |
-            npm run frontend:build
-      - run:
-          name: Deploy Front-End
-          command: |
-            npm run frontend:deploy
+      # - run:
+      #     name: Install Front-End
+      #     command: |
+      #       npm run frontend:install
+      # - run:
+      #     name: Install Back-End
+      #     command: |
+      #       npm run backend:install
+      # - run:
+      #     name: Build Back-End
+      #     command: |
+      #       npm run backend:build
+      # - run:
+      #     name: Build Front-End
+      #     command: |
+      #       npm run frontend:build
+      # - run:
+      #     name: Deploy Front-End
+      #     command: |
+      #       npm run frontend:deploy
       - run:
           name: "Done"
           command: echo "Job Done"
