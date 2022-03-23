@@ -36,14 +36,12 @@ jobs:
           name: Deploy Front-End
           command: |
             npm run frontend:deploy
-  say-done:
-    - run:
-        name: "Done"
-        command: echo "Job Done"
+      - run:
+          name: "Done"
+          command: echo "Job Done"
 
 # Invoke jobs via workflows
 workflows:
   project-workflow:
     jobs:
       - deploy-app
-      - say-done
