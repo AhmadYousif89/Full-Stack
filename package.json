@@ -8,9 +8,12 @@
     "frontend:lint": "cd udagram-frontend && npm run lint",
     "frontend:build": "cd udagram-frontend && npm run build",
     "frontend:deploy": "cd udagram-frontend && npm run deploy",
+    "frontend:del:s3": "cd udagram-frontend && npm run del:s3",
     "backend:install": "cd udagram-api && npm install",
     "backend:lint": "cd udagram-api && npm run lint",
     "backend:build": "cd udagram-api && npm run build",
+    "backend:deploy": "cd udagram-api && npm run deploy",
+    "backend:del:s3": "cd udagram-api && npm run del:eb",
     "test": "cd udagram-frontend && npm run test"
   },
   "repository": {

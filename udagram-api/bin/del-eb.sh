@@ -1,0 +1,1 @@
+eb terminate udagram-api

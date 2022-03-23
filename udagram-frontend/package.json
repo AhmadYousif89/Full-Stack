@@ -10,8 +10,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "sh ./bin/deploy.sh",
-    "del:s3": "sh ./bin/del-s3-bkt.sh"
+    "deploy": "sh ./bin/deploy-s3.sh",
+    "del:s3": "sh ./bin/del-s3.sh"
   },
   "private": true,
   "dependencies": {
