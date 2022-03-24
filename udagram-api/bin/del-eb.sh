@@ -1,1 +1,1 @@
-eb terminate udagram-api
+eb terminate
