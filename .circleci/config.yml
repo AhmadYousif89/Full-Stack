@@ -14,7 +14,7 @@ jobs:
     # Add steps to the job
     steps:
       - node/install
-      - aws-cli/setup
+      - ebs-cli/setup
       - checkout
       # - run:
       #     name: Install Front-End
