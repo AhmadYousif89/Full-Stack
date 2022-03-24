@@ -2,16 +2,17 @@ import * as dotenv from "dotenv";
 dotenv.config();
 
 export const config = {
-  username: `udacity`,
-  password: `123`,
+  username: `postgres`,
+  password: `udacity123`,
   database: `postgres`,
   port: 5432,
-  host: `127.0.0.1`,
+  host: `udacity.c2sd9ek0wmus.us-east-1.rds.amazonaws.com`,
   dialect: "postgres",
   aws_region: process.env.AWS_REGION,
   aws_profile: process.env.AWS_PROFILE,
   aws_media_bucket: process.env.AWS_BUCKET,
-  url: process.env.URL,
+  // url: process.env.URL,
+  url: `http://udacity.c2sd9ek0wmus.us-east-1.rds.amazonaws.com`,
   jwt: {
     secret: `JWT_SECRET`,
   },
