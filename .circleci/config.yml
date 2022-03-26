@@ -28,23 +28,13 @@ jobs:
           name: Install Back-End
           command: |
             npm run backend:install
-      # - run:
-      #     # Check programmatic errors on front-end code using es-lint
-      #     name: Lint Frontend
-      #     command: |
-      #       npm run frontend:lint
       - run:
-          # Check programmatic errors on back-end code using es-lint
-          name: Lint Backend
-          command: |
-            npm run backend:lint
-      - run:
-          # Build backend code
+          # Build and compile backend code
           name: Build Back-End
           command: |
             npm run backend:build
       - run:
-          # Build frontend code
+          # Build and compile frontend code
           name: Build Front-End
           command: |
             npm run frontend:build
