@@ -11,7 +11,7 @@
     "backend:install": "cd udagram-api && npm install",
     "backend:build": "cd udagram-api && npm run build",
     "backend:deploy": "cd udagram-api && npm run deploy",
-    "backend:del:s3": "cd udagram-api && npm run del:eb",
+    "backend:del:eb": "cd udagram-api && npm run del:eb",
     "test": "cd udagram-frontend && npm run test"
   },
   "repository": {
