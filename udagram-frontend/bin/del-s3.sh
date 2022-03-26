@@ -1,1 +1,1 @@
-aws s3 rb s3://x1-x2-x3/ --f
+aws s3 rb s3://udagram-ftnd/ --f

@@ -13,34 +13,51 @@ jobs:
       - image: cimg/base:stable
     # Add steps to the job
     steps:
+      # Install node, aws and eb  cli
       - node/install
       - aws-cli/setup
       - ebs-cli/setup
       - checkout
       - run:
+          # Install frontend dependencies
           name: Install Front-End
           command: |
             npm run frontend:install
       - run:
+          # Install backend dependencies
           name: Install Back-End
           command: |
             npm run backend:install
       - run:
+          # Check programmatic errors on front-end code using es-lint
+          name: Lint Frontend
+          command: |
+            npm run frontend:lint
+      - run:
+          # Check programmatic errors on back-end code using es-lint
+          name: Lint Backend
+          command: |
+            npm run backend:lint
+      - run:
+          # Build backend code
           name: Build Back-End
           command: |
             npm run backend:build
       - run:
+          # Build frontend code
           name: Build Front-End
           command: |
             npm run frontend:build
       - run:
+          # Deploy backend code to eb environment
           name: Deploy Back-End
           command: |
             npm run backend:deploy
-      # - run:
-      #     name: Deploy Front-End
-      #     command: |
-      #       npm run frontend:deploy
+      - run:
+          # Deploy frontend code to aws s3 bucket
+          name: Deploy Front-End
+          command: |
+            npm run frontend:deploy
       - run:
           name: "Done"
           command: echo "Job Done"

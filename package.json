@@ -1,7 +1,7 @@
 {
   "name": "full-stack-project",
   "version": "1.0.0",
-  "description": "This fairly simple application that includes all the major components of a Full-Stack web application.",
+  "description": "A fairly simple application that includes all the major components of a Full-Stack web application.",
   "main": "index.js",
   "scripts": {
     "frontend:install": "cd udagram-frontend && npm install",

@@ -1,22 +1,19 @@
+/* eslint-disable @typescript-eslint/camelcase */
 import * as dotenv from "dotenv";
 dotenv.config();
-
+// configuration to connect with aws db
 export const config = {
-  username: `postgres`,
-  password: `udacity123`,
-  database: `postgres`,
-  port: 5432,
-  host: `udacity.c2sd9ek0wmus.us-east-1.rds.amazonaws.com`,
+  username: `${process.env.POSTGRES_USERNAME}`,
+  password: process.env.POSTGRES_PASSWORD,
+  database: process.env.POSTGRES_DB,
+  port: Number(process.env.PORT),
+  host: process.env.POSTGRES_HOST,
   dialect: "postgres",
-  // aws_region: process.env.AWS_REGION,
-  aws_region: "us-east-1",
-  // aws_profile: process.env.AWS_PROFILE,
-  aws_profile: "default",
-  // aws_media_bucket: process.env.AWS_BUCKET,
-  aws_media_bucket: "http://x1-x2-x3.s3-website-us-east-1.amazonaws.com/",
-  // url: process.env.URL,
-  url: `http://udagram-api.eba-sfwnzsxm.us-east-1.elasticbeanstalk.com/`,
+  aws_region: process.env.AWS_REGION,
+  aws_profile: process.env.AWS_PROFILE,
+  aws_media_bucket: process.env.AWS_BUCKET,
+  url: process.env.URL,
   jwt: {
-    secret: `JWT_SECRET`,
+    secret: process.env.JWT_SECRET,
   },
 };
