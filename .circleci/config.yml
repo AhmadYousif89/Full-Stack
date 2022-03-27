@@ -18,52 +18,52 @@ jobs:
       - aws-cli/setup
       - ebs-cli/setup
       - checkout
-      # - run:
-      #     # Install frontend dependencies
-      #     name: Install Front-End
-      #     command: |
-      #       npm run frontend:install
-      # - run:
-      #     # Install backend dependencies
-      #     name: Install Back-End
-      #     command: |
-      #       npm run backend:install
-      # - run:
-      #     # Build and compile backend code
-      #     name: Build Back-End
-      #     command: |
-      #       npm run backend:build
-      # - run:
-      #     # Build and compile frontend code
-      #     name: Build Front-End
-      #     command: |
-      #       npm run frontend:build
-      # - run:
-      #     # Deploy frontend code to aws s3 bucket
-      #     name: Deploy Front-End
-      #     command: |
-      #       npm run frontend:deploy
-      # - run:
-      #     # Setting application environment variables through circleci
-      #     name: Setting ENVs
-      #     command: |
-      #       cd udagram-api
-      #       eb use udagram-env
-      #       eb setenv URL=$URL
-      #       eb setenv PORT=$PORT
-      #       eb setenv JWT_SECRET=$JWT_SECRET
-      #       eb setenv AWS_BUCKET=$AWS_BUCKET
-      #       eb setenv AWS_REGION=$AWS_REGION
-      #       eb setenv AWS_PROFILE=$AWS_PROFILE
-      #       eb setenv POSTGRES_DB=$POSTGRES_DB
-      #       eb setenv POSTGRES_HOST=$POSTGRES_HOST
-      #       eb setenv POSTGRES_PASSWORD=$POSTGRES_PASSWORD
-      #       eb setenv POSTGRES_USERNAME=$POSTGRES_USERNAME
-      # - run:
-      #     # Deploy backend code to eb environment
-      #     name: Deploy Back-End
-      #     command: |
-      #       npm run backend:deploy
+      - run:
+          # Install frontend dependencies
+          name: Install Front-End
+          command: |
+            npm run frontend:install
+      - run:
+          # Install backend dependencies
+          name: Install Back-End
+          command: |
+            npm run backend:install
+      - run:
+          # Build and compile backend code
+          name: Build Back-End
+          command: |
+            npm run backend:build
+      - run:
+          # Build and compile frontend code
+          name: Build Front-End
+          command: |
+            npm run frontend:build
+      - run:
+          # Deploy frontend code to aws s3 bucket
+          name: Deploy Front-End
+          command: |
+            npm run frontend:deploy
+      - run:
+          # Deploy backend code to eb environment
+          name: Deploy Back-End
+          command: |
+            npm run backend:deploy
+      - run:
+          # Setting application environment variables through circleci
+          name: Setting ENVs
+          command: |
+            cd udagram-api
+            eb use udagram-env
+            eb setenv URL=$URL
+            eb setenv PORT=$PORT
+            eb setenv JWT_SECRET=$JWT_SECRET
+            eb setenv AWS_BUCKET=$AWS_BUCKET
+            eb setenv AWS_REGION=$AWS_REGION
+            eb setenv AWS_PROFILE=$AWS_PROFILE
+            eb setenv POSTGRES_DB=$POSTGRES_DB
+            eb setenv POSTGRES_HOST=$POSTGRES_HOST
+            eb setenv POSTGRES_PASSWORD=$POSTGRES_PASSWORD
+            eb setenv POSTGRES_USERNAME=$POSTGRES_USERNAME
       - run:
           name: "Done"
           command: |
