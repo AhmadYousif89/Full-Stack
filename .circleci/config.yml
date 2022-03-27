@@ -18,16 +18,16 @@ jobs:
       - aws-cli/setup
       - ebs-cli/setup
       - checkout
-      - run:
-          # Install frontend dependencies
-          name: Install Front-End
-          command: |
-            npm run frontend:install
-      - run:
-          # Install backend dependencies
-          name: Install Back-End
-          command: |
-            npm run backend:install
+      # - run:
+      #     # Install frontend dependencies
+      #     name: Install Front-End
+      #     command: |
+      #       npm run frontend:install
+      # - run:
+      #     # Install backend dependencies
+      #     name: Install Back-End
+      #     command: |
+      #       npm run backend:install
       # - run:
       #     # Build and compile backend code
       #     name: Build Back-End
