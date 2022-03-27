@@ -66,7 +66,10 @@ jobs:
       #       npm run backend:deploy
       - run:
           name: "Done"
-          command: echo "Job Done"
+          command: |
+            echo "Job Done"
+            cd udagram-api
+            eb open
 
 # Invoke jobs via workflows
 workflows:
