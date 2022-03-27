@@ -69,7 +69,7 @@ jobs:
           command: |
             echo "Job Done"
             cd udagram-api
-            eb open
+            eb open udagram-env
 
 # Invoke jobs via workflows
 workflows:
