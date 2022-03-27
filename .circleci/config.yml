@@ -44,15 +44,11 @@ jobs:
           command: |
             npm run frontend:deploy
       - run:
-          # Deploy backend code to eb environment
-          name: Deploy Back-End
-          command: |
-            npm run backend:deploy
-      - run:
           # Setting application environment variables through circleci
           name: Setting ENVs
           command: |
             cd udagram-api
+            eb use udagram-env
             eb setenv URL = $URL
             eb setenv PORT = $PORT
             eb setenv JWT_SECRET = $JWT_SECRET
@@ -63,6 +59,11 @@ jobs:
             eb setenv POSTGRES_HOST = $POSTGRES_HOST
             eb setenv POSTGRES_PASSWORD = $POSTGRES_PASSWORD
             eb setenv POSTGRES_USERNAME = $POSTGRES_USERNAME
+      - run:
+          # Deploy backend code to eb environment
+          name: Deploy Back-End
+          command: |
+            npm run backend:deploy
       - run:
           name: "Done"
           command: echo "Job Done"
