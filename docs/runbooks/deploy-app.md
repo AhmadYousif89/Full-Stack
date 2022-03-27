@@ -2,7 +2,7 @@
 
   - first navigate to the application backend folder if you are in the root directory using this command `cd udagram-api`
   
-  - create an elastic-beanstalk application by running `eb init` this will initiate an eb config.yml file in the backend directory and it will ask you for basic configuration
+  - create an elastic-beanstalk application by running `eb init` this will initiate an `.elasticbeanstalk` folder `config.yml` file in the backend directory and it will ask you for basic configuration for your AWS IAM account
   
   - create application environment by running `eb create <env-name>`
   
