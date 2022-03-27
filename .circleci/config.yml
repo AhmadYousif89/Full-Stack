@@ -52,6 +52,7 @@ jobs:
           # Setting application environment variables through circleci
           name: Setting ENVs
           command: |
+            cd udagram-api
             eb setenv URL = $URL
             eb setenv PORT = $PORT
             eb setenv JWT_SECRET = $JWT_SECRET
