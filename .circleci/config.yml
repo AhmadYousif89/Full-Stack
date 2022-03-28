@@ -37,7 +37,7 @@ jobs:
           # Create application environment if not already exist
           name: Create environment
           command: |
-            eb create udagram-env
+            npm run create:env
       - run:
           # Build and compile backend code
           name: Build Back-End
