@@ -29,15 +29,20 @@ jobs:
           command: |
             npm run backend:install
       - run:
+          # Install backend dependencies
+          name: Install Back-End
+          command: |
+            npm run backend:install
+      - run:
+          # Create application environment if not already exist
+          name: Create environment
+          command: |
+            eb create udagram-env
+      - run:
           # Build and compile backend code
           name: Build Back-End
           command: |
             npm run backend:build
-      - run:
-          # Deploy backend code to eb environment
-          name: Deploy Back-End
-          command: |
-            npm run backend:deploy
       - run:
           # Build and compile frontend code
           name: Build Front-End
@@ -52,7 +57,6 @@ jobs:
           # Setting application environment variables through circleci
           name: Setting ENVs
           command: |
-            cd udagram-api
             eb use udagram-env
             eb setenv URL=$URL
             eb setenv PORT=$PORT
@@ -64,6 +68,11 @@ jobs:
             eb setenv POSTGRES_HOST=$POSTGRES_HOST
             eb setenv POSTGRES_PASSWORD=$POSTGRES_PASSWORD
             eb setenv POSTGRES_USERNAME=$POSTGRES_USERNAME
+      - run:
+          # Deploy backend code to eb environment
+          name: Deploy Back-End
+          command: |
+            npm run backend:deploy
       - run:
           name: "Done"
           command: |
