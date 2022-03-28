@@ -36,7 +36,8 @@ jobs:
       - run:
           # Create application environment if not already exist
           name: Create environment
-          command: npm run create:env || true
+          command: |
+            npm run create:env || true
       # - run:
       #     # Build and compile backend code
       #     name: Build Back-End
