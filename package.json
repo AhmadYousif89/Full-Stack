@@ -12,8 +12,8 @@
     "backend:build": "npm run build --prefix udagram-api",
     "backend:deploy": "npm run deploy --prefix udagram-api",
     "backend:del:eb": "npm run del:eb --prefix udagram-api",
-    "create:env": "sh ./bin/create-env.sh",
-    "test": "npm run test --prefix udagram-frontend"
+    "test": "npm run test --prefix udagram-frontend",
+    "create:env": "sh ./bin/create-env.sh"
   },
   "repository": {
     "type": "git",
