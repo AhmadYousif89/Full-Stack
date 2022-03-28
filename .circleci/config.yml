@@ -34,6 +34,11 @@ jobs:
           command: |
             npm run backend:build
       - run:
+          # Deploy backend code to eb environment
+          name: Deploy Back-End
+          command: |
+            npm run backend:deploy
+      - run:
           # Build and compile frontend code
           name: Build Front-End
           command: |
@@ -59,11 +64,6 @@ jobs:
             eb setenv POSTGRES_HOST=$POSTGRES_HOST
             eb setenv POSTGRES_PASSWORD=$POSTGRES_PASSWORD
             eb setenv POSTGRES_USERNAME=$POSTGRES_USERNAME
-      - run:
-          # Deploy backend code to eb environment
-          name: Deploy Back-End
-          command: |
-            npm run backend:deploy
       - run:
           name: "Done"
           command: |
