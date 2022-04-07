@@ -3,7 +3,6 @@ version: 2.1
 orbs:
   node: circleci/node@5.0.1
   aws-cli: circleci/aws-cli@2.1.0
-  s3-cli: circleci/aws-s3@3.0.0
   ebs-cli: circleci/aws-elastic-beanstalk@2.0.1
 # Define a job to be invoked later in a workflow.
 jobs:
@@ -18,11 +17,6 @@ jobs:
       - aws-cli/setup
       - ebs-cli/setup
       - checkout
-      - run:
-          # Create application environment
-          name: Create environment
-          command: |
-            npm run create:env || true
       - run:
           # Install frontend dependencies
           name: Install Front-End
@@ -53,16 +47,7 @@ jobs:
           name: Setting ENVs
           command: |
             eb use udagram-env
-            eb setenv URL=$URL
-            eb setenv PORT=$PORT
-            eb setenv JWT_SECRET=$JWT_SECRET
-            eb setenv AWS_BUCKET=$AWS_BUCKET
-            eb setenv AWS_REGION=$AWS_REGION
-            eb setenv AWS_PROFILE=$AWS_PROFILE
-            eb setenv POSTGRES_DB=$POSTGRES_DB
-            eb setenv POSTGRES_HOST=$POSTGRES_HOST
-            eb setenv POSTGRES_PASSWORD=$POSTGRES_PASSWORD
-            eb setenv POSTGRES_USERNAME=$POSTGRES_USERNAME
+            eb setenv URL=$URL PORT=$PORT JWT_SECRET=$JWT_SECRET AWS_BUCKET=$AWS_BUCKET AWS_REGION=$AWS_REGION AWS_PROFILE=$AWS_PROFILE POSTGRES_DB=$POSTGRES_DB POSTGRES_HOST=$POSTGRES_HOST POSTGRES_PASSWORD=$POSTGRES_PASSWORD POSTGRES_USERNAME=$POSTGRES_USERNAME
       - run:
           # Deploy backend code to eb environment
           name: Deploy Back-End
