@@ -52,6 +52,7 @@ jobs:
           # Deploy backend code to eb environment
           name: Deploy Back-End
           command: |
+            eb init udagram -r $AWS_DEFAULT_REGION -p node.js
             npm run backend:deploy
       - run:
           name: "Done"
