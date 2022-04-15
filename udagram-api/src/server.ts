@@ -34,7 +34,7 @@ import { config } from "./config/config";
 
   // Start the Server
   app.listen(port, () => {
-    console.log(`server running ${process.env.URL}`);
+    console.log(`server running ${config.url}`);
     console.log(`press CTRL+C to stop server`);
   });
 })();
