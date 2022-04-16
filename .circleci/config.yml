@@ -14,6 +14,8 @@ jobs:
     steps:
       # Install node, aws and eb  cli
       - node/install
+      - aws-cli/setup
+      - ebs-cli/setup
       - checkout
       - run:
           # Install frontend dependencies
@@ -35,8 +37,6 @@ jobs:
           name: Build Back-End
           command: |
             npm run backend:build
-      - aws-cli/setup
-      - ebs-cli/setup
       - run:
           # Deploy frontend code to aws s3 bucket
           name: Deploy Front-End
