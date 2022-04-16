@@ -17,31 +17,36 @@ jobs:
       - aws-cli/setup
       - ebs-cli/setup
       - checkout
-      - run:
-          # Install frontend dependencies
-          name: Install Front-End
-          command: |
-            npm run frontend:install
+      # - run:
+      #     # Install frontend dependencies
+      #     name: Install Front-End
+      #     command: |
+      #       npm run frontend:install
       - run:
           # Install backend dependencies
           name: Install Back-End
           command: |
             npm run backend:install
-      - run:
-          # Build and compile frontend code
-          name: Build Front-End
-          command: |
-            npm run frontend:build
+      # - run:
+      #     # Build and compile frontend code
+      #     name: Build Front-End
+      #     command: |
+      #       npm run frontend:build
       - run:
           # Build and compile backend code
           name: Build Back-End
           command: |
             npm run backend:build
+      # - run:
+      #     # Deploy frontend code to aws s3 bucket
+      #     name: Deploy Front-End
+      #     command: |
+      #       npm run frontend:deploy
       - run:
-          # Deploy frontend code to aws s3 bucket
-          name: Deploy Front-End
+          # Deploy backend code to eb environment
+          name: Deploy Back-End
           command: |
-            npm run frontend:deploy
+            npm run backend:deploy
       - run:
           # Setting application environment variables through circleci configuration setting
           name: Setting ENVs
@@ -49,11 +54,6 @@ jobs:
             eb init udagram -r $AWS_DEFAULT_REGION -p node.js
             eb use Udagram-env
             eb setenv URL=$URL PORT=$PORT JWT_SECRET=$JWT_SECRET AWS_BUCKET=$AWS_BUCKET AWS_REGION=$AWS_REGION AWS_PROFILE=$AWS_PROFILE POSTGRES_DB=$POSTGRES_DB POSTGRES_HOST=$POSTGRES_HOST POSTGRES_PASSWORD=$POSTGRES_PASSWORD POSTGRES_USERNAME=$POSTGRES_USERNAME
-      - run:
-          # Deploy backend code to eb environment
-          name: Deploy Back-End
-          command: |
-            npm run backend:deploy
       - run:
           name: "Done"
           command: |
