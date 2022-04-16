@@ -14,7 +14,7 @@
     "prod": "tsc && node ./www/server.js",
     "clean": "rm -rf www/ || true",
     "build": "npm run clean && tsc && cp -rf src/config www/config && cp .npmrc www/.npmrc && cp package.json www/package.json && cd www && zip -r deploy-bknd.zip . && cd ..",
-    "deploy": "sh ./bin/deploy-eb.sh",
+    "deploy": "eb deploy Udagram-env",
     "del:eb": "sh ./bin/del-eb.sh"
   },
   "keywords": [],
