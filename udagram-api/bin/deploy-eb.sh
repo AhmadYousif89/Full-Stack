@@ -4,5 +4,6 @@
 # aws elasticbeanstalk update-environment --application-name udagram --environment-name Udagram-env --version-label app-1
 eb init udagram -r $AWS_DEFAULT_REGION -p node.js
 eb use Udagram-env
-cd udagram-api/www/
+cd ..
+cd www
 eb deploy Udagram-env
