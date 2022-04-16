@@ -3,6 +3,10 @@
   "version": "2.0.0",
   "description": "",
   "main": "server.js",
+  "engines": {
+    "node": "14.9.1",
+    "npm": "6.14.16"
+  },
   "scripts": {
     "start": "node .",
     "tsc": "tsc",
